@@ -12,9 +12,13 @@ import Login from "./pages/ragistration/Login";
 import SignUp from "./pages/ragistration/SignUp";
 import UserDeshbord from "./pages/user/UserDeshbord";
 import AdminDeshbord from "./pages/admin/AdminDeshbord";
+import AddProductPage from "./pages/admin/AddProductPage";
+import UpdateProductPage from "./components/admin/UpdateProductPage";
+import MyState from "./context/myState";
 
 const App = () => {
   return (
+    <MyState>
     <Router>
       <ScrollTop />
       <Routes>
@@ -26,8 +30,11 @@ const App = () => {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/UserDeshbord" element={<UserDeshbord />} />
         <Route path="/AdminDeshbord" element={<AdminDeshbord/>} />
+        <Route path="/AddProductPage" element={<AddProductPage />} />
+        <Route path="/UpdateProduct" element={<UpdateProductPage />} />
       </Routes>
     </Router>
+    </MyState>
   );
 }
 

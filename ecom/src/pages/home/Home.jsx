@@ -5,8 +5,12 @@ import Category from '../../components/category/Category'
 import HomepageCart from '../../components/homePagecart/HomepageCart'
 import Track from '../../components/track/Track'
 import Testimonial from '../../components/testimonial/Testimonial'
+import { useContext } from 'react'
+import myContext from '../../context/myContext'
 
 export default function Home() {
+  const context = useContext(myContext);
+  const name = context;
   return (
     <Layout>
         <HeroSection />
@@ -14,6 +18,7 @@ export default function Home() {
         <HomepageCart />
         <Track />
         <Testimonial />
+        <h1>{name}</h1>
     </Layout>
   )
 }

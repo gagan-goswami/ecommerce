@@ -1,3 +1,10 @@
+import React from "react";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import ProductDetail from "../../components/admin/ProductDetails";
+import OrderDetail from "../../components/admin/OrderDetails";
+import UserDetail from "../../components/admin/UserDetails";
+
+
 const AdminDashboard = () => {
     return (
         <div>
@@ -27,9 +34,10 @@ const AdminDashboard = () => {
 
                 {/* Bottom */}
                 <div className="">
-                    <div className="flex flex-wrap -m-4 text-center justify-center">
+                    <Tabs>
+                    <TabList className="flex flex-wrap -m-4 text-center justify-center">
                         {/* Total Products */}
-                        <div className="p-4 md:w-1/3 sm:w-1/2 w-full cursor-pointer">
+                        <Tab className="p-4 md:w-1/3 sm:w-1/2 w-full cursor-pointer">
                             <div className=" border bg-pink-50 hover:bg-pink-100 border-pink-100 px-4 py-3 rounded-xl" >
                                 <div className="text-pink-500 w-12 h-12 mb-3 inline-block" >
                                     <svg
@@ -57,10 +65,10 @@ const AdminDashboard = () => {
                                 <h2 className="title-font font-medium text-3xl text-pink-400 fonts1" >10</h2>
                                 <p className=" text-pink-500  font-bold" >Total Products</p>
                             </div>
-                        </div>
+                        </Tab>
 
                         {/* Total Order  */}
-                        <div className="p-4 md:w-1/4 sm:w-1/2 w-full cursor-pointer">
+                        <Tab className="p-4 md:w-1/4 sm:w-1/2 w-full cursor-pointer">
                             <div className=" border bg-pink-50 hover:bg-pink-100 border-pink-100 px-4 py-3 rounded-xl" >
                                 <div className="text-pink-500 w-12 h-12 mb-3 inline-block" >
                                     <svg
@@ -86,10 +94,10 @@ const AdminDashboard = () => {
                                 <h2 className="title-font font-medium text-3xl text-pink-400 fonts1" >10</h2>
                                 <p className=" text-pink-500  font-bold" >Total Order</p>
                             </div>
-                        </div>
+                        </Tab>
 
                         {/* Total User  */}
-                        <div className="p-4 md:w-1/3 sm:w-1/2 w-full cursor-pointer">
+                        <Tab className="p-4 md:w-1/3 sm:w-1/2 w-full cursor-pointer">
                             <div className=" border bg-pink-50 hover:bg-pink-100 border-pink-100 px-4 py-3 rounded-xl" >
                                 <div className="text-pink-500 w-12 h-12 mb-3 inline-block" >
                                     <svg
@@ -114,8 +122,21 @@ const AdminDashboard = () => {
                                 <h2 className="title-font font-medium text-3xl text-pink-400 fonts1" >10</h2>
                                 <p className=" text-pink-500  font-bold" >Total Order</p>
                             </div>
-                        </div>
-                    </div>
+                        </Tab>
+                    </TabList>
+
+                    <TabPanel>
+<ProductDetail />
+                    </TabPanel>
+
+                    <TabPanel>
+                      <OrderDetail />
+                    </TabPanel>
+
+                    <TabPanel>
+                      <UserDetail />
+                    </TabPanel>
+                    </Tabs>
                 </div>
             </div>
         </div>
