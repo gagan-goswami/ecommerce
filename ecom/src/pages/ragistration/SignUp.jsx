@@ -28,7 +28,7 @@ const userSignupFunction = async () => {
         } 
         setLoading = true;
         try {
-           const users = await createUserWithEmailAndPassword(auth);
+           const users = await createUserWithEmailAndPassword(auth. userSignup.email, userSignup.password); 
     }
     catch (error) {
        console.log(error);
