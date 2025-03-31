@@ -16,14 +16,18 @@ const Navbar = () => {
             </li>
 
             {/* Signup */}
-            <li>
+           {!user ? <li>
                 <Link to={'/signup'}>Signup</Link>
-            </li>
+            </li> : "" }
+
+            {!user ? <li>
+                <Link to={'/login'}>Login</Link>
+            </li> : "" }
 
             {/* User */}
-            <li>
+            {user?.role === "user" && <li>
                 <Link to={'/userdeshbord'}>Kamal</Link>
-            </li>
+            </li> }
 
             {/* Admin */}
              <li>
